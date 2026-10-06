@@ -66,7 +66,7 @@ export const weeklyTaskScores: Record<string, Record<string, number>> = {
     amelia: 4,
     daire: 3,
     jake: 3,
-    ryan: 3,
+    ryan: 4,
     caolan_t: 3,
     criostoir: 1,
     eimhear: 3,
@@ -123,9 +123,9 @@ const teamOrderIndex = new Map(teams.map((t, index) => [t.id, index]));
  * is deterministic. Shared by both the individual and team scoring passes.
  */
 function rankByPoints(
-  entries: { id: string; points: number }[],
+  entries: { id: string; points: number; }[],
   tieIndex: Map<string, number>,
-): { id: string; points: number; position: number }[] {
+): { id: string; points: number; position: number; }[] {
   const ranked = [...entries].sort(
     (a, b) =>
       b.points - a.points ||
